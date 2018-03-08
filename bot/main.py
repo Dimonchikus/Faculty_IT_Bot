@@ -13,7 +13,6 @@ def handle_start(message):
 def handle_text(message):
     if message.text == "stop":
         bussines.stop(message)
-
     elif message.text == "'Відмітка про перебування у звільненні(добове)":
         Bot.send_message(message.from_user.id, 'Введіть ПБІ')
     elif message.text == "Сповістити про зауваження чи загрозу":
