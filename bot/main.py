@@ -11,9 +11,7 @@ def handle_start(message):
 
 @bussines.Bot.message_handler(content_types=['text'])
 def handle_text(message):
-    if message.text == "stop":
-        bussines.stop(message)
-    elif bussines.start_flag:
+    if bussines.start_flag:
         bussines.add_cadet(message)
     elif message.text == "Відмітка про перебування поза межами інституту":
         Bot.send_message(message.from_user.id, 'Введіть ПБІ')
