@@ -2,7 +2,7 @@ import telebot
 import bot.constants
 import re
 
-Bot = telebot.TeleBot(bot.constants.token_of_bot)
+Bot = None
 
 start_flag = False
 
