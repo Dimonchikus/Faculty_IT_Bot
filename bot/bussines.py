@@ -29,7 +29,7 @@ def add_cadet(message):
     global start_flag
     with open('bd.txt', 'a') as fio:
         if check_for_correct(str(message.text)):
-            fio.write("hb")
+            fio.write((str(message.from_user.id) + ' ' + str(message.text) + '\n'))
     user_markup = telebot.types.ReplyKeyboardMarkup(True)
     user_markup.row('Відмітка про перебування поза межами інституту', 'Сповістити про зауваження чи загрозу')
     Bot.send_message(message.from_user.id, '>>>', reply_markup=user_markup)
