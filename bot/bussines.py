@@ -19,7 +19,7 @@ def check_for_correct(text):
     data = text.split('_')
     flag = False
     if data[0].isalpha() and re.match(r'^[А-Я]', data[0]):
-        if re.match(r'^[А-Я].[А-Я].', data[1]):
+        if data[1].count('.') == 2 and data[1].__len__() == 4 and data[1].endswith('.'):
             if data[2].isdigit():
                 flag = True
     return flag
@@ -28,8 +28,8 @@ def check_for_correct(text):
 def add_cadet(message):
     global start_flag
     with open('bd.txt', 'a') as fio:
-        check_for_correct(str(message.text))
-        fio.write(str(message.text) + '\n')
+        if check_for_correct(str(message.text)):
+            fio.write("hb")
     user_markup = telebot.types.ReplyKeyboardMarkup(True)
     user_markup.row('Відмітка про перебування поза межами інституту', 'Сповістити про зауваження чи загрозу')
     Bot.send_message(message.from_user.id, '>>>', reply_markup=user_markup)
