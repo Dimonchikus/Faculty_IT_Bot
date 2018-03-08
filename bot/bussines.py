@@ -1,5 +1,6 @@
 import telebot
 import bot.constants
+import re
 
 Bot = telebot.TeleBot(bot.constants.token_of_bot)
 
@@ -9,9 +10,14 @@ start_flag = False
 def start(message):
     global Bot
     global start_flag
-    Bot.send_message(message.from_user.id, 'Введіть дані \n(Прізвище Ініціали Група)')
+    Bot.send_message(message.from_user.id, 'Додайте інформацію про себе (Прізвище_Ініціали_Група)\nЗразок: Шкіцький_В.В._265')
     start_flag = True
     print('start')
+
+
+
+
+
 
 def add_cadet(message):
     global start_flag
