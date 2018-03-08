@@ -15,7 +15,7 @@ def handle_text(message):
         bussines.stop(message)
     elif bussines.start_flag:
         bussines.add_cadet(message)
-    elif message.text == "'Відмітка про перебування поза межами інституту":
+    elif message.text == "Відмітка про перебування поза межами інституту":
         Bot.send_message(message.from_user.id, 'Введіть ПБІ')
     elif message.text == "Сповістити про зауваження чи загрозу":
         Bot.send_message(message.from_user.id, 'Опишіть стан дій')
