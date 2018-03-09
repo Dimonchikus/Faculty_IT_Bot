@@ -49,7 +49,7 @@ def add_cadet(message):
 
     for id_c in constants.db:
         if str(message.from_user.id) == (str(id_c).split())[0]:
-            Bot.send_message(message.from_user.id, 'Ви вже додані до бази данихб як:\n' + ((str(id_c).split())[1]))
+            Bot.send_message(message.from_user.id, 'Ви вже додані до бази даних як:\n' + ((str(id_c).split())[1]))
             start_flag = False
             return
 

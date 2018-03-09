@@ -5,12 +5,11 @@ from bot import constants
 
 bussines.Bot = telebot.TeleBot(constants.token_of_bot)
 
-with open('bd.txt',encoding='utf-8') as fio:
-    constants.db = fio.readlines()
-
 
 @bussines.Bot.message_handler(commands=['start'])
 def handle_start(message):
+    with open('bd.txt', encoding='utf-8') as fio:
+        constants.db = fio.readlines()
     """
     start working with @miti_faculty_it_bot
     message == '/start'
