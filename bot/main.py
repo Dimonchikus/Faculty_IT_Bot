@@ -32,7 +32,7 @@ def get_location(message):
     global if_alert
     if(if_alert == True):
         print("Done")
-        bussines.Bot.send_location(message.from_user.id,message.location.longitude,message.location.latitude)
+        bussines.Bot.send_location(message.from_user.id,message.location.latitude,message.location.longitude)
         if_alert = False
 
 
